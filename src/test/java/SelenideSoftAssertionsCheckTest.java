@@ -20,14 +20,10 @@ public class SelenideSoftAssertionsCheckTest {
     @Test
     void checkAssertionsAndJUnitTest(){
         open("https://github.com/selenide/selenide");
-        //press button wiki
         $("#wiki-tab").click();
-        //should have 'SoftAssertions'
-        //click 'SoftAssertions'
         $("[placeholder='Find a page…']").setValue("SoftAssertions");
         $(".Layout-sidebar").shouldHave(text("SoftAssertions"));
         $(byText("SoftAssertions")).click();
-        //should be code example
         $("#user-content-3-using-junit5-extend-test-class").parent().sibling(0).shouldHave(text(s));
         sleep(4000);
 
